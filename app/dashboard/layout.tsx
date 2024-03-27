@@ -1,6 +1,9 @@
 import SideNav from '@/app/ui/dashboard/sidenav';
- 
+require('dotenv').config();
+
 export default function Layout({ children }: { children: React.ReactNode }) {
+  const authSecret = process.env.AUTH_SECRET;
+  console.log('authSecret', authSecret)
   return (
     <div className="flex h-screen flex-col md:flex-row md:overflow-hidden">
       <div className="w-full flex-none md:w-64">
